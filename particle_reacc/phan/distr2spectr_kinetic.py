@@ -8,8 +8,6 @@ def distr2spectr_kinetic(j_p,j_e,ene_p,ene_e):
     Create number density distribution
     of ambient Cosmic Ray proton and electron
     assuming particle distribution from ambient_CR
-    :param ene: proton energy list (astropy quantity in MeV)
-    :param f: particle distribution
     '''
     # Check if input energy is MeV
     if not ene_p.unit is u.MeV:

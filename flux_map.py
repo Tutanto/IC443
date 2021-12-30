@@ -140,13 +140,13 @@ if __name__ == '__main__':
     from make_table import make_table
 
     # Load data cubes
-    image = 'original_data/IC443_V5/density_sh4_mcl_0f.fits'
+    image = 'original_data/IC443_V5/density_sh4_mcl_0f.fits'  # path to initial data cube
     hdu = fits.open(image)[0]
     dens_ini = hdu.data  # initial density data cube
     header = hdu.header  # header info
     size_cube = len(dens_ini)  # data cube pixel size
 
-    image = 'original_data/IC443_V5/density_sh4_mclf.fits'
+    image = 'original_data/IC443_V5/density_sh4_mclf.fits'  # path to final data cube
     hdu = fits.open(image)[0]
     dens_f = hdu.data  # final density data cube
 
