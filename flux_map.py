@@ -66,7 +66,7 @@ def make_gamma(frange):
 
     for indexes, data1, data2 in enumerate2D(dens_ini[z_i:z_f, index_y1:index_y2, frange[0]:frange[1]], dens_f[z_i:z_f, index_y1:index_y2, frange[0]:frange[1]]):
 
-        if data2 > 0:  # loop only in non-empy cells
+        if (data1 > 0 and data2 > 0):  # loop only in non-empy cells
 
             s = (data2/data1)/4  # compute compression factor
 
@@ -120,7 +120,7 @@ if __name__ == '__main__':
     # Global variables
 
     distance = 1.5 * u.kpc  # distance of IC443
-    energy = np.logspace(6, 14, 100)  # flux map energy range
+    energy = np.logspace(6, 14, 100) * u.eV  # flux map energy range
 
     vol = 4.826809e+51 * u.cm**3  # single computational cell volume
     cut_p = 5000 * u.GeV  # cut off energy protons distribution
