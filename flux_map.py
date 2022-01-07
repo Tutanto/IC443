@@ -62,7 +62,7 @@ def make_gamma(frange):
                                )  # directory to store protons&electrons tables
     os.makedirs(path, exist_ok=True)  # succeeds even if directory exists.
     # empty 3D array to fill
-    var = np.zeros((z_f-z_i, int(y_size), int(x_size/n_processes)))
+    var = np.zeros((z_f-z_i, int(y_size), frange[1]-frange[0]))
 
     for indexes, data1, data2 in enumerate2D(dens_ini[z_i:z_f, index_y1:index_y2, frange[0]:frange[1]], dens_f[z_i:z_f, index_y1:index_y2, frange[0]:frange[1]]):
 
